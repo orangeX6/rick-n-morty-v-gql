@@ -32,6 +32,8 @@ export const Filter = () => {
     fetchCharacters({ page: 1, filter: { species: e.target.value } });
   };
 
+  if (data) console.log(data);
+
   return (
     <Paper
       sx={{

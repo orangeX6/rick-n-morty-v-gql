@@ -5,16 +5,16 @@ import {
   useFetchCharacterDetailsQuery,
 } from '../store';
 
-export const useFetchCharacterDetails = (id: number, dialog: boolean) => {
-  const [skip, setSkip] = useState(true);
+export const useFetchCharacterDetails = (id: number, skip: boolean) => {
+  // const [skip, setSkip] = useState(true);
   const { data, error, isFetching } = useFetchCharacterDetailsQuery(
     { id },
     { skip }
   );
 
-  useEffect(() => {
-    setSkip((prev) => !prev);
-  }, [dialog]);
+  // useEffect(() => {
+  //   setSkip((prev) => !prev);
+  // }, []);
 
   let character: CharacterDetail | undefined;
   if (data) {

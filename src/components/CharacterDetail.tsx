@@ -32,9 +32,13 @@ export const CharacterDetails: FC<CharacterDetailsProp> = ({
   handleCloseDialog,
   id,
 }) => {
-  const { character, error, isFetching } = useFetchCharacterDetails(id, dialog);
-
+  const { character, error, isFetching } = useFetchCharacterDetails(
+    id,
+    !dialog
+  );
   // const gridBio = (items: { [key: string]: string | number }) => {};
+
+  console.log(dialog);
 
   const gridItems = (items: { [key: string]: string | number }) => {
     return Object.entries(items).map(([key, value]) => (

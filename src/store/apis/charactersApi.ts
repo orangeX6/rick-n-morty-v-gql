@@ -1,8 +1,8 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import { graphqlRequestBaseQuery } from '@rtk-query/graphql-request-base-query';
 import { gql } from 'graphql-request';
-import { Characters } from '../../types/characters';
-import { FilterCharacter } from '../../types/filter';
+import { Characters } from '../../types';
+import { FilterCharacter } from '../../types';
 
 interface Info {
   count: number;

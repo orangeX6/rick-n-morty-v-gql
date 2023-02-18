@@ -7,7 +7,7 @@ export const lightTheme = createTheme({
 
     background: {
       paper: '#e6fbda',
-      default: '#f2f2f2',
+      default: '#f9f2e5',
     },
     primary: {
       main: '#3ea644',
@@ -15,7 +15,7 @@ export const lightTheme = createTheme({
       dark: '#04661d',
     },
     secondary: {
-      light: '#fff',
+      light: '#f9f2e5',
       main: '#81f35c',
     },
     text: {
@@ -81,6 +81,7 @@ export const darkTheme = createTheme({
       main: '#9dff9e',
     },
   },
+
   components: {
     MuiAppBar: {
       styleOverrides: {
@@ -89,7 +90,24 @@ export const darkTheme = createTheme({
         },
       },
     },
+    MuiCssBaseline: {
+      styleOverrides: {
+        html: {
+          // fontSize: '62.5%' /* 62.5% of 16px = 10px */,
+          // fontFamily: 'Poppins, sans-serif',
+        },
+        body: {
+          // margin: '0',
+          // color: 'red',
+          // boxSizing: 'border-box',
+          // fontFamily: 'Poppins, sans-serif',
+          // backgroundColor: '#E3E3E3',
+          // filter: `brightness(0.8) contrast(1.2)`,
+        },
+      },
+    },
   },
+
   spacing: 8,
   shadows: [
     'none',

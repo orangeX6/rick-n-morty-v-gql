@@ -1,38 +1,34 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, ChangeEvent } from 'react';
 import { Box, Stack, TextField, Paper, MenuItem, Button } from '@mui/material';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import { useEffect, ChangeEvent } from 'react';
-import { useLazyFetchCharactersQuery } from '../store';
-
-const species = [
-  'Alien',
-  'Animal',
-  'Human',
-  'Humanoid',
-  'Mytholog',
-  'PoopyButthole',
-  'Robot',
-  'Vampire',
-  'Unknown',
-];
-
-const status = ['Alive', 'Dead', 'Unknown'];
-
-const gender = ['Male', 'Female', 'Genderless', 'Unknown'];
+import { RootState, useLazyFetchCharactersQuery } from '../store';
+import { Species, Gender, Status } from '../types';
 
 export const Filter = () => {
-  const [fetchCharacters, { data, isLoading, error }] =
-    useLazyFetchCharactersQuery();
-
+  // const [fetchCharacters, { data, isLoading, error }] =
+  // useLazyFetchCharactersQuery();
   // useEffect(() => {
   //   console.log('LOADED');
   // }, []);
+  // const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+  //   e.preventDefault();
+  //   fetchCharacters({ page: 1, filter: { species: e.target.value } });
+  // };
+  // if (data) console.log(data);
 
-  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    e.preventDefault();
-    fetchCharacters({ page: 1, filter: { species: e.target.value } });
-  };
+  const { name, species, status, gender } = useSelector((state: RootState) => {
+    return {
+      name: state.filter.name,
+      species: state.filter.species,
+      status: state.filter.status,
+      gender: state.filter.gender,
+    };
+  });
 
-  if (data) console.log(data);
+  const handleSpecies = () => {};
+  const handleGender = () => {};
+  const handleStatus = () => {};
 
   return (
     <Paper
@@ -56,6 +52,7 @@ export const Filter = () => {
           variant="outlined"
           color="success"
           size="small"
+          defaultValue={name}
           sx={{ flexGrow: 1, maxHeight: 100 }}
         />
         <TextField
@@ -65,9 +62,9 @@ export const Filter = () => {
           color="success"
           sx={{ width: '20%' }}
           select
-          onChange={handleChange}
+          // onChange={handleChange}
         >
-          {species.map((specie) => (
+          {Species.map((specie) => (
             <MenuItem key={specie} value={specie}>
               {specie}
             </MenuItem>
@@ -81,7 +78,7 @@ export const Filter = () => {
           sx={{ width: '20%' }}
           select
         >
-          {status.map((statusVal) => (
+          {Status.map((statusVal) => (
             <MenuItem key={statusVal} value={statusVal}>
               {statusVal}
             </MenuItem>
@@ -95,7 +92,7 @@ export const Filter = () => {
           sx={{ width: '20%' }}
           select
         >
-          {gender.map((sex) => (
+          {Gender.map((sex) => (
             <MenuItem key={sex} value={sex}>
               {sex}
             </MenuItem>

@@ -13,13 +13,13 @@ import {
   Box,
 } from '@mui/material';
 import { Progress } from './Progress';
-import { useFetchCharacterDetails } from '../hooks/use-fetch-character-details';
+import { useFetchCharacterDetails } from '../hooks';
 
 import {
   useLazyFetchCharacterDetailsQuery,
   useFetchCharacterDetailsQuery,
 } from '../store';
-import { CharacterDetail } from '../types/character-detail';
+import { CharacterDetail } from '../types';
 
 interface CharacterDetailsProp {
   dialog: boolean;
@@ -37,8 +37,6 @@ export const CharacterDetails: FC<CharacterDetailsProp> = ({
     !dialog
   );
   // const gridBio = (items: { [key: string]: string | number }) => {};
-
-  console.log(dialog);
 
   const gridItems = (items: { [key: string]: string | number }) => {
     return Object.entries(items).map(([key, value]) => (
@@ -60,10 +58,10 @@ export const CharacterDetails: FC<CharacterDetailsProp> = ({
       <Grid
         item
         lg={4}
-        md={4}
+        md={6}
         sm={12}
         xs={12}
-        sx={{ boxShadow: 2, padding: 2, margin: 1 }}
+        sx={{ boxShadow: 2, paddingY: 2.5, margin: 1 }}
         key={items.name}
       >
         {Object.entries(items).map(([key, value]) => (
@@ -153,7 +151,7 @@ export const CharacterDetails: FC<CharacterDetailsProp> = ({
           open={dialog}
           onClose={handleCloseDialog}
           fullWidth
-          maxWidth="lg"
+          maxWidth="md"
           sx={
             {
               // maxHeight: '80vh',
@@ -193,8 +191,8 @@ export const CharacterDetails: FC<CharacterDetailsProp> = ({
                   maxHeight: { xs: 300, md: 350 },
                   maxWidth: { xs: 300, md: 350 },
                   borderRadius: 5,
-
-                  padding: 3,
+                  paddingX: 3,
+                  paddingY: 2,
                   boxShadow: 4,
                 }}
                 alt={character.name}

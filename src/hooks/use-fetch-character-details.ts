@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { CharacterDetail } from '../types/character-detail';
+import { CharacterDetail } from '../types';
 import {
   useLazyFetchCharacterDetailsQuery,
   useFetchCharacterDetailsQuery,

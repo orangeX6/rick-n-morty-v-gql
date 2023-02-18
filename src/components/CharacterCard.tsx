@@ -2,7 +2,7 @@ import { Box, Card, CardContent, Grid, Typography } from '@mui/material';
 import { useState } from 'react';
 import { CharacterDetails } from './CharacterDetail';
 import { FC } from 'react';
-import { Characters } from '../types/characters';
+import { Characters } from '../types';
 // import {
 //   useLazyFetchCharacterDetailsQuery,
 //   useFetchCharacterDetailsQuery,
@@ -30,40 +30,43 @@ export const CharacterCard: FC<CharacterProps> = ({ character }) => {
   // }
 
   return (
-    <Box padding={1}>
-      <Card
+    <Box>
+      {/* <Card
         sx={{
           backgroundColor: 'primary',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
           ':hover': {
             boxShadow: 7,
             cursor: 'pointer',
           },
         }}
         onClick={handleClick}
-      >
-        <CardContent>
-          <Box>
-            {
-              <img
-                style={{ width: '100%', height: '100%' }}
-                src={character.image}
-              />
-            }
-          </Box>
-          <Typography gutterBottom variant="h5" component="div">
-            {character.name}
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary">
-            Species - {character.species}
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary">
-            Status - {character.status}
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary">
-            Gender - {character.gender}
-          </Typography>
-        </CardContent>
-      </Card>
+      > */}
+      <CardContent onClick={handleClick}>
+        <Box>
+          {
+            <img
+              style={{ width: '100%', height: '100%' }}
+              src={character.image}
+            />
+          }
+        </Box>
+        <Typography gutterBottom variant="h5" component="div">
+          {character.name}
+        </Typography>
+        <Typography variant="subtitle1" color="text.secondary">
+          Species - {character.species}
+        </Typography>
+        <Typography variant="subtitle1" color="text.secondary">
+          Status - {character.status}
+        </Typography>
+        <Typography variant="subtitle1" color="text.secondary">
+          Gender - {character.gender}
+        </Typography>
+      </CardContent>
+      {/* </Card> */}
       <CharacterDetails
         dialog={showCharDetails}
         handleCloseDialog={() => setShowCharDetails(false)}

@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { useFetchCharactersQuery } from '../apis/charactersApi';
 
 const filterSlice = createSlice({
   name: 'filter',

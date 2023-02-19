@@ -1,26 +1,14 @@
-import { Box, Grid, Card } from '@mui/material';
-import { CharacterCard } from './CharacterCard';
+import { Grid, Card } from '@mui/material';
 import { Characters } from '../types';
+import { CharacterCard } from './CharacterCard';
 import { Progress } from './Progress';
-import { useLazyFetchCharacters } from '../hooks/use-fetch-characters';
-import { useSelector } from 'react-redux';
-import { RootState } from '../store';
+import { useLazyFetchCharacters } from '../hooks';
 
 export const CharacterContainer = () => {
-  const { name, species, status, gender } = useSelector((state: RootState) => {
-    return {
-      name: state.filter.name,
-      species: state.filter.species,
-      status: state.filter.status,
-      gender: state.filter.gender,
-    };
-  });
-
   let { data, error, isFetching } = useLazyFetchCharacters();
 
   let content;
   if (data) {
-    // console.log(data);
     content = data.characters.results.map((character: Characters) => (
       <Grid
         item
@@ -50,39 +38,14 @@ export const CharacterContainer = () => {
     ));
   }
 
-  // let content;
-  // if (isFetching) {
-  //   content = <Skeleton className="h-10 w-full" times={3} />;
-  // } else if (error) {
-  //   content = <div>Error Loading Albums</div>;
-  // } else {
-  //   content = data.map((album) => (
-  //     <AlbumsListItem key={album.id} album={album} />
-  //   ));
-  // }
-
   return (
     <>
       <Grid
         container
         sx={{ minHeight: '20vh' }}
-        // rowSpacing={3}
-        // columnSpacing={1}
         alignContent="center"
         justifyContent="center"
-        // alignItems="center"
-        // justifyItems="center"
       >
-        {/* <Grid item xs={12} sm={6} md={4} lg={12 / 5}>
-      <CharacterCard />
-    </Grid>
-    <Grid item xs={12} sm={6} md={4} lg={12 / 5}>
-      <CharacterCard />
-    </Grid>
-    <Grid item xs={12} sm={6} md={4} lg={12 / 5}>
-      <CharacterCard />
-    </Grid>
-   */}
         {content}
       </Grid>
       {isFetching && <Progress />}

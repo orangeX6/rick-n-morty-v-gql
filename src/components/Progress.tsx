@@ -1,4 +1,4 @@
-import { Stack, CircularProgress, Box } from '@mui/material';
+import { Stack, CircularProgress } from '@mui/material';
 
 export const Progress = () => {
   return (

@@ -1,7 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
-import { graphqlRequestBaseQuery } from '@rtk-query/graphql-request-base-query';
 import { gql } from 'graphql-request';
-import { CharacterDetail } from '../../types';
+import { graphqlRequestBaseQuery } from '@rtk-query/graphql-request-base-query';
 
 const characterDetailsApi = createApi({
   reducerPath: 'characterDetails',

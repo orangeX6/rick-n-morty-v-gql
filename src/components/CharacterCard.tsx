@@ -1,12 +1,7 @@
-import { Box, Card, CardContent, Grid, Typography } from '@mui/material';
-import { useState } from 'react';
+import { FC, useState } from 'react';
+import { Box, CardContent, Typography } from '@mui/material';
 import { CharacterDetails } from './CharacterDetail';
-import { FC } from 'react';
 import { Characters } from '../types';
-// import {
-//   useLazyFetchCharacterDetailsQuery,
-//   useFetchCharacterDetailsQuery,
-// } from '../store';
 
 interface CharacterProps {
   character: Characters;
@@ -14,36 +9,13 @@ interface CharacterProps {
 
 export const CharacterCard: FC<CharacterProps> = ({ character }) => {
   const [showCharDetails, setShowCharDetails] = useState(false);
-  // const [fetchCharacterDetails, { data, isLoading, error }] =
-  //   useLazyFetchCharacterDetailsQuery();
-
-  // const { data, isLoading, error } = useFetchCharacterDetailsQuery(id);
 
   const handleClick = () => {
     setShowCharDetails(!showCharDetails);
-    // const id = character.id;
-    // fetchCharacterDetails({ id });
   };
-
-  // if (data) {
-  //   console.log(data);
-  // }
 
   return (
     <Box>
-      {/* <Card
-        sx={{
-          backgroundColor: 'primary',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          ':hover': {
-            boxShadow: 7,
-            cursor: 'pointer',
-          },
-        }}
-        onClick={handleClick}
-      > */}
       <CardContent onClick={handleClick}>
         <Box>
           {

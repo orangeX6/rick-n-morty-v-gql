@@ -1,6 +1,6 @@
 import { AppBar, Box, Toolbar, Stack, Typography } from '@mui/material';
-import logo from '../assets/logo.png';
 import { ToggleSwitch } from './Switch';
+import logo from '../assets/logo.png';
 
 export const Navbar = () => {
   return (

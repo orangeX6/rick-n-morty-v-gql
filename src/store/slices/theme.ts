@@ -1,5 +1,4 @@
 import { createTheme } from '@mui/material';
-import { amber, deepOrange, grey, teal } from '@mui/material/colors';
 
 export const lightTheme = createTheme({
   palette: {
@@ -99,16 +98,7 @@ export const darkTheme = createTheme({
     // },
     MuiCssBaseline: {
       styleOverrides: {
-        html: {
-          // fontSize: '62.5%' /* 62.5% of 16px = 10px */,
-          // fontFamily: 'Poppins, sans-serif',
-        },
         body: {
-          // margin: '0',
-          // color: 'red',
-          // boxSizing: 'border-box',
-          // fontFamily: 'Poppins, sans-serif',
-          // backgroundColor: '#E3E3E3',
           // filter: `brightness(0.8) contrast(1.2)`,
         },
       },

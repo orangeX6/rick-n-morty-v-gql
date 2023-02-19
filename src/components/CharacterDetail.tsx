@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import {
   Button,
   Dialog,
@@ -9,17 +9,9 @@ import {
   Grid,
   Divider,
   Typography,
-  Chip,
-  Box,
 } from '@mui/material';
 import { Progress } from './Progress';
 import { useFetchCharacterDetails } from '../hooks';
-
-import {
-  useLazyFetchCharacterDetailsQuery,
-  useFetchCharacterDetailsQuery,
-} from '../store';
-import { CharacterDetail } from '../types';
 
 interface CharacterDetailsProp {
   dialog: boolean;
@@ -36,7 +28,6 @@ export const CharacterDetails: FC<CharacterDetailsProp> = ({
     id,
     !dialog
   );
-  // const gridBio = (items: { [key: string]: string | number }) => {};
 
   const gridItems = (items: { [key: string]: string | number }) => {
     return Object.entries(items).map(([key, value]) => (
@@ -67,7 +58,6 @@ export const CharacterDetails: FC<CharacterDetailsProp> = ({
         {Object.entries(items).map(([key, value]) => (
           <Typography
             key={key}
-            // align="center"
             sx={{ paddingX: 2 }}
             variant="h6"
             color={(theme) => theme.palette.text.secondary}
@@ -152,12 +142,6 @@ export const CharacterDetails: FC<CharacterDetailsProp> = ({
           onClose={handleCloseDialog}
           fullWidth
           maxWidth="md"
-          sx={
-            {
-              // maxHeight: '80vh',
-              // marginTop: '10vh',
-            }
-          }
         >
           <DialogTitle
             id="dialog-title"
@@ -273,16 +257,7 @@ export const CharacterDetails: FC<CharacterDetailsProp> = ({
                   Episodes
                 </Typography>
               </Grid>
-              <Grid
-                container
-                alignContent="center"
-                justifyContent="center"
-                // alignItems="center"
-                // justifyItems="center"
-                // rowSpacing={2}
-                // columnSpacing={3}
-                // sx={{ minHeight: '20vh', padding: 4 }}
-              >
+              <Grid container alignContent="center" justifyContent="center">
                 {character.episode.map((ep) => episodeGrid(ep))}
               </Grid>
             </Grid>

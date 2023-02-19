@@ -1,6 +1,6 @@
+import { useState, useEffect } from 'react';
 import { IconButton } from '@mui/material';
 import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';
-import { useState, useEffect } from 'react';
 
 export const ScrollToTop = () => {
   const [visible, setVisible] = useState<boolean>(true);
@@ -29,8 +29,6 @@ export const ScrollToTop = () => {
             backgroundColor: 'secondary.main',
             bottom: '4vh',
             right: '3vw',
-            // width: '4rem',
-            // height: '4rem',
             maxHeight: { sm: '2.5rem', md: '3rem', lg: '4rem' },
             maxWidth: { sm: '2.5rem', md: '3rem', lg: '4rem' },
 
@@ -41,7 +39,6 @@ export const ScrollToTop = () => {
               color: 'text.secondary',
             },
           }}
-          // size="large"
           aria-label="theme"
           color="primary"
         >

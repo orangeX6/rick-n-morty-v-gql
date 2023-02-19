@@ -1,6 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
-import { graphqlRequestBaseQuery } from '@rtk-query/graphql-request-base-query';
 import { gql } from 'graphql-request';
+import { graphqlRequestBaseQuery } from '@rtk-query/graphql-request-base-query';
 import { Characters } from '../../types';
 import { FilterCharacter } from '../../types';
 
@@ -16,11 +16,6 @@ interface CharacterList {
     info: Info;
     results: Characters[];
   };
-}
-
-interface IArgs {
-  page: number;
-  filter: FilterCharacter;
 }
 
 const charactersApi = createApi({
@@ -65,7 +60,6 @@ const charactersApi = createApi({
         if (
           currentCache.characters.info.count !== newItems.characters.info.count
         ) {
-          console.log(currentCache, newItems);
           return newItems;
         }
         currentCache.characters.info = newItems.characters.info;

@@ -58,6 +58,33 @@ export const lightTheme = createTheme({
     // },
   },
   spacing: 8,
+  shadows: [
+    'none',
+    '0px 2px 1px -1px rgba(92, 169, 82, 0.85),0px 1px 1px 0px rgba(92, 169, 82, 0.85),0px 1px 3px 0px rgba(92, 169, 82, 0.85)',
+    '0px 3px 1px -2px rgba(92, 169, 82, 0.85),0px 2px 2px 0px rgba(92, 169, 82, 0.85),0px 1px 5px 0px rgba(92, 169, 82, 0.85)',
+    '0px 3px 3px -2px rgba(62, 166, 68, 0.9),0px 3px 4px 0px rgba(42, 115, 47, 0.85),0px 1px 8px 0px rgba(23, 64, 26, 0.8)',
+    '0px 2px 4px -1px rgba(92, 169, 82, 0.85),0px 4px 5px 0px rgba(92, 169, 82, 0.85),0px 1px 10px 0px rgba(92, 169, 82, 0.85)',
+    '0px 2px 5px rgba(92, 169, 82, 0.85)',
+    '0px 10px 20px rgba(92, 169, 82, 0.85)',
+    '1.6px 7px 7px -4px rgba(62, 166, 68, 0.9),1px 11px 14px 3px rgba(42, 115, 47, 0.85),2px 5px 20px 5px rgba(23, 64, 26, 0.8)',
+    '0px 5px 5px -3px rgba(92, 169, 82, 0.85),0px 8px 10px 1px rgba(92, 169, 82, 0.85),0px 3px 14px 2px rgba(92, 169, 82, 0.85)',
+    'none',
+    'none',
+    'none',
+    'none',
+    'none',
+    'none',
+    'none',
+    'none',
+    'none',
+    'none',
+    'none',
+    'none',
+    'none',
+    'none',
+    'none',
+    'none',
+  ],
 });
 
 export const darkTheme = createTheme({
@@ -70,7 +97,7 @@ export const darkTheme = createTheme({
     },
     primary: { main: '#244d2e', light: '#244d2e' },
     text: {
-      primary: '#fff',
+      primary: '#f8f2e6',
     },
     secondary: {
       light: '#3d3d3d',

@@ -8,18 +8,18 @@ import {
 } from '@mui/material';
 import { ToggleSwitch } from './Switch';
 import logo from '../assets/logo.png';
-import logosm from '../assets/logosm.png';
+import logoMobile from '../assets/logoMobile.png';
 
 export const Navbar = () => {
   const isTablet = useMediaQuery('(max-width:900px)');
-  const isMobile = useMediaQuery('(max-width:650px');
+  const isMobile = useMediaQuery('(max-width:900px)');
 
   return (
     <AppBar position="sticky" color="primary">
       <Toolbar>
         <Box sx={{ flex: 1 }}>
           {isTablet ? (
-            <img src={logosm} alt="logo" width="30%" />
+            <img src={logoMobile} alt="logo" width="25%" />
           ) : (
             <img src={logo} alt="logo" width="30%" />
           )}

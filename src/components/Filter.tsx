@@ -63,6 +63,7 @@ export const Filter = () => {
       sx={{
         padding: '1rem',
         backgroundColor: 'primary.light',
+        boxShadow: 3,
       }}
     >
       <Grid

@@ -18,7 +18,7 @@ export default class Particle {
     this.#xPos = x;
     this.#yPos = y;
 
-    this.#distance = randomIntFromRange(20, 1080);
+    this.#distance = randomIntFromRange(80, 1080);
     this.#radians = Math.random() * Math.PI * 2;
     this.radius = radius || Math.random() * 8;
     this.color = color || randomColor(this.#color);

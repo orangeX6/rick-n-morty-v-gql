@@ -11,7 +11,7 @@ let mouse;
 const particles = [];
 const init = () => {
   particles.splice(0);
-  for (let i = 0; i < 720; i++) {
+  for (let i = 0; i < 900; i++) {
     particles.push(new Particle(canvas.width / 2, canvas.height / 2));
   }
   setTimeout(() => {

@@ -9,33 +9,63 @@ export const CharacterContainer = () => {
 
   let content;
   if (data) {
-    content = data.characters.results.map((character: Characters) => (
-      <Grid
-        item
-        component={Card}
-        xs={12}
-        sm={5}
-        md={3.5}
-        lg={2.4}
-        xl={2}
-        marginX={1.5}
-        marginY={2.5}
-        key={character.id}
-        sx={{
-          backgroundColor: 'primary',
-          borderRadius: 2,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          ':hover': {
-            boxShadow: 7,
-            cursor: 'pointer',
-          },
-        }}
-      >
-        <CharacterCard character={character} />
-      </Grid>
-    ));
+    if (!data.characters.info.count) {
+      content = (
+        <Grid
+          item
+          component={Card}
+          xs={12}
+          sm={6}
+          md={6}
+          lg={6}
+          xl={6}
+          padding={5}
+          alignItems="center"
+          justifyContent="center"
+          sx={{
+            backgroundColor: 'primary',
+            borderRadius: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            ':hover': {
+              boxShadow: 7,
+              cursor: 'pointer',
+            },
+          }}
+        >
+          NO RESULTS FOUND!
+        </Grid>
+      );
+    } else {
+      content = data.characters.results.map((character: Characters) => (
+        <Grid
+          item
+          component={Card}
+          xs={12}
+          sm={5}
+          md={3.5}
+          lg={2.4}
+          xl={2}
+          marginX={1.5}
+          marginY={2.5}
+          key={character.id}
+          sx={{
+            backgroundColor: 'primary',
+            borderRadius: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            ':hover': {
+              boxShadow: 7,
+              cursor: 'pointer',
+            },
+          }}
+        >
+          <CharacterCard character={character} />
+        </Grid>
+      ));
+    }
   }
 
   return (

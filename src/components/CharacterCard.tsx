@@ -39,7 +39,6 @@ export const CharacterCard: FC<CharacterProps> = ({ character }) => {
           Gender - {character.gender}
         </Typography>
       </CardContent>
-      {/* </Card> */}
       <CharacterDetails
         dialog={showCharDetails}
         handleCloseDialog={() => setShowCharDetails(false)}

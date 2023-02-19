@@ -18,10 +18,9 @@ export default class Particle {
     this.#xPos = x;
     this.#yPos = y;
 
-    // this.#distance = randomIntFromRange(20, window.innerWidth / 2);
     this.#distance = randomIntFromRange(20, 1080);
     this.#radians = Math.random() * Math.PI * 2;
-    this.radius = radius || Math.random() * 6;
+    this.radius = radius || Math.random() * 8;
     this.color = color || randomColor(this.#color);
   }
 
@@ -32,8 +31,6 @@ export default class Particle {
     this.ctx.lineCap = 'round';
     this.ctx.moveTo(lastCoords.x, lastCoords.y);
     this.ctx.lineTo(this.x, this.y);
-    // this.ctx.shadowColor = this.color;
-    // this.ctx.shadowBlur = 5;
     this.ctx.strokeStyle = this.color;
     this.ctx.stroke();
     this.ctx.closePath();
@@ -59,7 +56,6 @@ export default class Particle {
     // Creating Circular Motion
     this.x = this.#xPos + Math.cos(this.#radians) * this.#distance;
     this.y = this.#yPos + Math.sin(this.#radians) * this.#distance;
-    // console.log(Math.cos(this.#radians));
 
     this.draw(lastCoords);
   }

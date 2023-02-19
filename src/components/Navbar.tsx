@@ -1,21 +1,64 @@
-import { AppBar, Box, Toolbar, Stack, Typography } from '@mui/material';
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
 import { ToggleSwitch } from './Switch';
 import logo from '../assets/logo.png';
+import logosm from '../assets/logosm.png';
 
 export const Navbar = () => {
+  const isTablet = useMediaQuery('(max-width:900px)');
+  const isMobile = useMediaQuery('(max-width:650px');
+
   return (
     <AppBar position="sticky" color="primary">
       <Toolbar>
         <Box sx={{ flex: 1 }}>
-          <img src={logo} alt="logo" width="30%" />
+          {isTablet ? (
+            <img src={logosm} alt="logo" width="30%" />
+          ) : (
+            <img src={logo} alt="logo" width="30%" />
+          )}
         </Box>
-        <Box sx={{ flexGrow: 1 }}>
-          <Typography variant="h4">Rick And Morty</Typography>
-        </Box>
-        <Stack direction="row" spacing={2}>
+        {!isMobile && (
+          <Box sx={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Typography variant="h4" align="center">
+              Rick And Morty
+            </Typography>
+          </Box>
+        )}
+        <Stack
+          sx={{ flex: 1 }}
+          direction="row"
+          spacing={2}
+          justifyContent="right"
+        >
           <ToggleSwitch />
         </Stack>
       </Toolbar>
     </AppBar>
   );
 };
+
+// import React from 'react';
+// import { useTheme, useMediaQuery } from '@material-ui/core';
+// import LogoDesktop from './logo-desktop.png';
+// import LogoMobile from './logo-mobile.png';
+
+// function App() {
+//   const theme = useTheme();
+//   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+//   return (
+//     <div>
+//       {isMobile ? <img src={LogoMobile} alt="Mobile Logo" /> : <img src={LogoDesktop} alt="Desktop Logo" />}
+//       <h1>My App</h1>
+//     </div>
+//   );
+// }
+
+// export default App;

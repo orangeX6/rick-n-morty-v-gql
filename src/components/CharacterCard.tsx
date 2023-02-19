@@ -50,6 +50,7 @@ export const CharacterCard: FC<CharacterProps> = ({ character }) => {
             <img
               style={{ width: '100%', height: '100%' }}
               src={character.image}
+              alt={character.name}
             />
           }
         </Box>

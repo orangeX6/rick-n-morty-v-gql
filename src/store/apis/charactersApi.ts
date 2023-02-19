@@ -62,8 +62,15 @@ const charactersApi = createApi({
         return endpointName;
       },
       merge: (currentCache: CharacterList, newItems: CharacterList) => {
+        if (
+          currentCache.characters.info.count !== newItems.characters.info.count
+        ) {
+          console.log(currentCache, newItems);
+          return newItems;
+        }
         currentCache.characters.info = newItems.characters.info;
         currentCache.characters.results.push(...newItems.characters.results);
+        return currentCache;
       },
       // @ts-ignore
       forceRefetch({ currentArg, previousArg }) {

@@ -1,36 +1,26 @@
 import { Box, Grid, Card } from '@mui/material';
-import { useEffect, useState } from 'react';
-import { useFetchCharactersQuery } from '../store';
 import { CharacterCard } from './CharacterCard';
 import { Characters } from '../types';
 import { Progress } from './Progress';
-import { useFetchCharacters } from '../hooks/use-fetch-characters';
+import { useLazyFetchCharacters } from '../hooks/use-fetch-characters';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store';
 
 export const CharacterContainer = () => {
-  // const [page, setPage] = useState(1);
-  // const { data, error, isFetching } = useFetchCharactersQuery({ page });
+  const { name, species, status, gender } = useSelector((state: RootState) => {
+    return {
+      name: state.filter.name,
+      species: state.filter.species,
+      status: state.filter.status,
+      gender: state.filter.gender,
+    };
+  });
 
-  // useEffect(() => {
-  //   const onScroll = () => {
-  //     const scrolledToBottom =
-  //       window.innerHeight + window.scrollY + 250 >=
-  //       document.body.offsetHeight - 250;
-
-  //     if (scrolledToBottom && !isFetching && data?.characters.info.next) {
-  //       setPage(data.characters.info.next);
-  //     }
-  //   };
-  //   document.addEventListener('scroll', onScroll);
-
-  //   return function () {
-  //     document.removeEventListener('scroll', onScroll);
-  //   };
-  // }, [page, isFetching]);
-
-  const { data, error, isFetching } = useFetchCharacters();
+  let { data, error, isFetching } = useLazyFetchCharacters();
 
   let content;
   if (data) {
+    // console.log(data);
     content = data.characters.results.map((character: Characters) => (
       <Grid
         item

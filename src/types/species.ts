@@ -1,11 +1,12 @@
 export const Species = [
   'Alien',
   'Animal',
+  'Cronenberg',
+  'Disease',
   'Human',
   'Humanoid',
-  'Mytholog',
+  'Mythological',
   'PoopyButthole',
   'Robot',
-  'Vampire',
   'Unknown',
 ];

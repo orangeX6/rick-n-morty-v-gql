@@ -90,6 +90,13 @@ export const darkTheme = createTheme({
         },
       },
     },
+    // MuiInputBase: {
+    //   styleOverrides: {
+    //     input: {
+    //       backgroundColor: '#244d2e',
+    //     },
+    //   },
+    // },
     MuiCssBaseline: {
       styleOverrides: {
         html: {

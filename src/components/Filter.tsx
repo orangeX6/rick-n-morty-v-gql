@@ -1,6 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState, ChangeEvent } from 'react';
-import { Box, Stack, TextField, Paper, MenuItem, Button } from '@mui/material';
+import {
+  Box,
+  Stack,
+  TextField,
+  Paper,
+  MenuItem,
+  Button,
+  Grid,
+} from '@mui/material';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import {
   RootState,
@@ -77,7 +85,7 @@ export const Filter = () => {
       sx={{
         padding: '1rem',
         backgroundColor: 'primary.light',
-        maxHeight: '15vh',
+        // maxHeight: '15vh',
       }}
     >
       {/* <Box
@@ -88,76 +96,99 @@ export const Filter = () => {
         }}
       > */}
       {/* <Stack spacing={4}> */}
-      <Stack direction="row" sx={{ padding: '1rem' }} spacing={2}>
-        <TextField
-          label="Name"
-          variant="outlined"
-          color="success"
-          size="small"
-          // defaultValue={name}
-          sx={{ flexGrow: 1, maxHeight: 100 }}
-          value={term}
-          type="text"
-          onChange={(e) => setTerm(e.target.value)}
-        />
-        <TextField
-          defaultValue=""
-          label="species"
-          size="small"
-          color="success"
-          sx={{ width: '20%' }}
-          value={species}
-          onChange={handleSpecies}
-          select
-          // onChange={handleChange}
-        >
-          {Species.map((specie) => (
-            <MenuItem key={specie} value={specie}>
-              {specie}
-            </MenuItem>
-          ))}
-        </TextField>
-        <TextField
-          defaultValue=""
-          label="status"
-          size="small"
-          color="success"
-          sx={{ width: '20%' }}
-          value={status}
-          onChange={handleStatus}
-          select
-        >
-          {Status.map((statusVal) => (
-            <MenuItem key={statusVal} value={statusVal}>
-              {statusVal}
-            </MenuItem>
-          ))}
-        </TextField>
-        <TextField
-          defaultValue=""
-          label="gender"
-          size="small"
-          color="success"
-          sx={{ width: '20%' }}
-          value={gender}
-          onChange={handleGender}
-          select
-        >
-          {Gender.map((sex) => (
-            <MenuItem key={sex} value={sex}>
-              {sex}
-            </MenuItem>
-          ))}
-        </TextField>
-        <Button
-          variant="contained"
-          size="small"
-          startIcon={<RestartAltIcon />}
-          onClick={handleReset}
-        >
-          Reset
-        </Button>
-      </Stack>
+      <Grid
+        container
+        // sx={{ padding: '1rem' }}
+        alignContent="center"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Grid item margin={1} xs={12} sm={5} md={5.5} lg={2.2} xl={2.2}>
+          {/* <Stack direction="row" sx={{ padding: '1rem' }} spacing={2}> */}
+          <TextField
+            label="Name"
+            variant="outlined"
+            color="success"
+            size="small"
+            // defaultValue={name}
+            // sx={{ flexGrow: 1, maxHeight: 100 }}
+            sx={{ width: '100%' }}
+            value={term}
+            type="text"
+            onChange={(e) => setTerm(e.target.value)}
+          />
+        </Grid>
+
+        <Grid item margin={1} xs={12} sm={5} md={5.5} lg={2.2} xl={2.2}>
+          <TextField
+            defaultValue=""
+            label="species"
+            size="small"
+            color="success"
+            sx={{ width: '100%' }}
+            value={species}
+            onChange={handleSpecies}
+            select
+            // onChange={handleChange}
+          >
+            {Species.map((specie) => (
+              <MenuItem key={specie} value={specie}>
+                {specie}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+
+        <Grid item margin={1} xs={12} sm={5} md={5.5} lg={2.2} xl={2.2}>
+          <TextField
+            defaultValue=""
+            label="status"
+            size="small"
+            color="success"
+            sx={{ width: '100%' }}
+            value={status}
+            onChange={handleStatus}
+            select
+          >
+            {Status.map((statusVal) => (
+              <MenuItem key={statusVal} value={statusVal}>
+                {statusVal}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+
+        <Grid item margin={1} xs={12} sm={5} md={5.5} lg={2.2} xl={2.2}>
+          <TextField
+            defaultValue=""
+            label="gender"
+            size="small"
+            color="success"
+            sx={{ width: '100%' }}
+            value={gender}
+            onChange={handleGender}
+            select
+          >
+            {Gender.map((sex) => (
+              <MenuItem key={sex} value={sex}>
+                {sex}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+
+        <Grid item margin={1}>
+          <Button
+            variant="contained"
+            size="small"
+            startIcon={<RestartAltIcon />}
+            onClick={handleReset}
+          >
+            Reset
+          </Button>
+        </Grid>
+      </Grid>
+
       {/* </Stack> */}
       {/* </Box> */}
     </Paper>

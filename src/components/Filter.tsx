@@ -26,6 +26,7 @@ export const Filter = () => {
     return () => {
       clearTimeout(timerId);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [term]);
 
   const { name, species, status, gender } = useSelector((state: RootState) => {

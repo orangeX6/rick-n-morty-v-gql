@@ -43,22 +43,3 @@ export const Navbar = () => {
     </AppBar>
   );
 };
-
-// import React from 'react';
-// import { useTheme, useMediaQuery } from '@material-ui/core';
-// import LogoDesktop from './logo-desktop.png';
-// import LogoMobile from './logo-mobile.png';
-
-// function App() {
-//   const theme = useTheme();
-//   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
-//   return (
-//     <div>
-//       {isMobile ? <img src={LogoMobile} alt="Mobile Logo" /> : <img src={LogoDesktop} alt="Desktop Logo" />}
-//       <h1>My App</h1>
-//     </div>
-//   );
-// }
-
-// export default App;

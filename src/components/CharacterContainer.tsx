@@ -5,7 +5,7 @@ import { Progress } from './Progress';
 import { useLazyFetchCharacters } from '../hooks';
 
 export const CharacterContainer = () => {
-  let { data, error, isFetching } = useLazyFetchCharacters();
+  const { data, error, isFetching } = useLazyFetchCharacters();
 
   let content;
   if (data) {

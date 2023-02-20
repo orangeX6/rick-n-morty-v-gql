@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useLazyFetchCharactersQuery } from '../store';
-import { FilterCharacter } from '../types';
+// import { FilterCharacter } from '../types';
 
 export const useLazyFetchCharacters = () => {
   const [page, setPage] = useState(1);
@@ -30,11 +30,13 @@ export const useLazyFetchCharacters = () => {
     return function () {
       document.removeEventListener('scroll', onScroll);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, isFetching]);
 
   useEffect(() => {
     setPage((prev) => 1);
     getCharacters({ page, filter });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter, page]);
 
   return { data, error, isFetching };

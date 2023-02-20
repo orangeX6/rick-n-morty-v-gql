@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import { Box, CardContent, Typography } from '@mui/material';
-import { CharacterDetails } from './CharacterDetail';
+import { CharacterDetails } from './CharacterDetails';
 import { Characters } from '../types';
 
 interface CharacterProps {

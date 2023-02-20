@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '../hooks';
 import { RootState, useLazyFetchCharactersQuery } from '../store';
-// import { FilterCharacter } from '../types';
 
 export const useLazyFetchCharacters = () => {
   const [page, setPage] = useState(1);
 
-  const { filter } = useSelector((state: RootState) => {
+  const { filter } = useAppSelector((state: RootState) => {
     return {
       filter: state.filter,
     };

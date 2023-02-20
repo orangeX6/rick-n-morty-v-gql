@@ -13,7 +13,7 @@ import {
 import { Progress } from './Progress';
 import { useFetchCharacterDetails } from '../hooks';
 
-interface CharacterDetailsProp {
+export interface CharacterDetailsProp {
   dialog: boolean;
   handleCloseDialog: () => void;
   id: number;

@@ -1,13 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { FilterCharacter } from '../../types';
+
+const initialState: FilterCharacter = {
+  name: '',
+  gender: '',
+  species: '',
+  status: '',
+};
 
 const filterSlice = createSlice({
   name: 'filter',
-  initialState: {
-    name: '',
-    species: '',
-    status: '',
-    gender: '',
-  },
+  initialState,
   reducers: {
     changeName(state, action) {
       state.name = action.payload;

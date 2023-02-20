@@ -1,5 +1,6 @@
 import { useEffect, useState, ChangeEvent } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppSelector, useAppDispatch } from '../hooks';
+
 import { TextField, Paper, MenuItem, Button, Grid } from '@mui/material';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import {
@@ -13,7 +14,7 @@ import {
 import { Species, Gender, Status } from '../types';
 
 export const Filter = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const [term, setTerm] = useState<string>('');
 
@@ -29,14 +30,16 @@ export const Filter = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [term]);
 
-  const { name, species, status, gender } = useSelector((state: RootState) => {
-    return {
-      name: state.filter.name,
-      species: state.filter.species,
-      status: state.filter.status,
-      gender: state.filter.gender,
-    };
-  });
+  const { name, species, status, gender } = useAppSelector(
+    (state: RootState) => {
+      return {
+        name: state.filter.name,
+        species: state.filter.species,
+        status: state.filter.status,
+        gender: state.filter.gender,
+      };
+    }
+  );
 
   const handleSpecies = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch(changeSpecies(e.target.value));
@@ -75,6 +78,7 @@ export const Filter = () => {
       >
         <Grid item margin={1} xs={12} sm={5} md={5.5} lg={2.2} xl={2.2}>
           <TextField
+            defaultValue={name}
             label="Name"
             variant="outlined"
             color="success"

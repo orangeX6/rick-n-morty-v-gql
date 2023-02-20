@@ -1,13 +1,12 @@
-import { useSelector, useDispatch } from 'react-redux';
 import IconButton from '@mui/material/IconButton';
-import { RootState } from '../store';
-import { toggleTheme } from '../store/slices/themeSlice';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { useAppSelector, useAppDispatch } from '../hooks';
+import { RootState, toggleTheme } from '../store';
 
 export const ToggleSwitch = () => {
-  const theme = useSelector((state: RootState) => state.theme);
-  const dispatch = useDispatch();
+  const theme = useAppSelector((state: RootState) => state.theme);
+  const dispatch = useAppDispatch();
 
   return (
     <IconButton

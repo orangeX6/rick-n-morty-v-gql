@@ -1,6 +1,6 @@
 # Rick and Morty
 
-Welcome to my Rick and Morty Vite GraphQL project! This is a project that uses Vite, TypeScript, and React to help you get started with building your own web applications.
+Welcome to my Rick and Morty Vite GraphQL project! This is a project that uses Vite, TypeScript, React, ReduxToolkit and RTKQuery
 
 ## Getting Started
 
@@ -79,8 +79,8 @@ That's it! With these commands, you can easily run tests for your Vite TypeScrip
 
 For more information about Vite, TypeScript, and React, check out the following resources:
 
-[Vite documentation](https://vitejs.dev/)
-[TypeScript documentation](https://www.typescriptlang.org/docs/)
+[Vite documentation](https://vitejs.dev/)  
+[TypeScript documentation](https://www.typescriptlang.org/docs/)  
 [React documentation](https://reactjs.org/docs/)
 
 ## License

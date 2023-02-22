@@ -17,8 +17,8 @@ export const useLazyFetchCharacters = () => {
   useEffect(() => {
     const onScroll = () => {
       const scrolledToBottom =
-        window.innerHeight + window.scrollY + 250 >=
-        document.body.offsetHeight - 250;
+        window.innerHeight + window.scrollY + 400 >=
+        document.body.offsetHeight - 400;
 
       if (scrolledToBottom && !isFetching && data?.characters.info.next) {
         setPage(data.characters.info.next);

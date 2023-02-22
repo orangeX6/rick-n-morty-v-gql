@@ -61,6 +61,10 @@ const charactersApi = createApi({
         ) {
           return newItems;
         }
+        if (newItems.characters.info.pages === 1) {
+          return newItems;
+        }
+
         currentCache.characters.info = newItems.characters.info;
         currentCache.characters.results.push(...newItems.characters.results);
         return currentCache;

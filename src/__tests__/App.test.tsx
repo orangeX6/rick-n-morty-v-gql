@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
@@ -11,7 +11,7 @@ describe('App', () => {
   it('renders without crashing', () => {
     const store = setupStore();
 
-    const { getByText } = render(
+    render(
       <Provider store={store}>
         <ThemeProvider theme={lightTheme}>
           <CssBaseline />
@@ -20,6 +20,6 @@ describe('App', () => {
       </Provider>
     );
 
-    expect(getByText(/Rick/i)).toBeInTheDocument();
+    expect(screen.getByText(/Rick/i)).toBeInTheDocument();
   });
 });

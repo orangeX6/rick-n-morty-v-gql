@@ -30,16 +30,14 @@ export const Filter = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [term]);
 
-  const { name, species, status, gender } = useAppSelector(
-    (state: RootState) => {
-      return {
-        name: state.filter.name,
-        species: state.filter.species,
-        status: state.filter.status,
-        gender: state.filter.gender,
-      };
-    }
-  );
+  const { species, status, gender } = useAppSelector((state: RootState) => {
+    return {
+      // name: state.filter.name,
+      species: state.filter.species,
+      status: state.filter.status,
+      gender: state.filter.gender,
+    };
+  });
 
   const handleSpecies = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch(changeSpecies(e.target.value));
@@ -78,7 +76,6 @@ export const Filter = () => {
       >
         <Grid item margin={1} xs={12} sm={5} md={5.5} lg={2.2} xl={2.2}>
           <TextField
-            defaultValue={name}
             label="Name"
             variant="outlined"
             color="success"
@@ -92,6 +89,7 @@ export const Filter = () => {
 
         <Grid item margin={1} xs={12} sm={5} md={5.5} lg={2.2} xl={2.2}>
           <TextField
+            data-testid="species"
             defaultValue=""
             label="species"
             size="small"
